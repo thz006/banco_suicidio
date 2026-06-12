@@ -1,0 +1,12 @@
+1. Criação do banco de dados
+Criamos o banco com create database banco_suicidio e selecionamos ele com use banco_suicidio.
+2. Criação das tabelas auxiliares
+Antes da tabela principal, criamos as tabelas que ela referencia: estados, estado_civil, escolaridade e causas. Cada uma com uma chave primária auto_increment.
+3. Criação da tabela principal
+A tabela suicidios foi criada por último, pois ela depende das outras quatro. Ela contém as colunas ano, idade, sexo e quatro colunas de foreign key ligando às tabelas auxiliares.
+4. Inserção dos dados
+Os dados foram extraídos de um CSV real com registros de suicídios de 2010 a 2019. Um script Python leu o arquivo, identificou os valores únicos de cada coluna auxiliar e gerou os inserts automaticamente, convertendo os valores NA do CSV para NULL.
+5. Povoamento completo
+Numa segunda etapa, o banco foi expandido para incluir todos os 27 estados brasileiros e 500 registros simulados na tabela suicidios, com distribuição de idade, sexo e estado proporcional aos dados reais.
+6. Criação das views
+Foram criadas 7 views para facilitar consultas: exibição geral com joins, total por estado, top 10 estados, total por escolaridade, total por estado civil, média de idade e relatório completo cruzando todas as tabelas.
